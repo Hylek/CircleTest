@@ -14,5 +14,23 @@ position = Vector2( 881, 458 )
 scale = Vector2( 4, 4 )
 z_index = -1
 id = 1
+
+[node name="Volume2" parent="." instance=ExtResource( 2 )]
+modulate = Color( 0.368627, 0.803922, 0.435294, 1 )
+position = Vector2( 881, 163 )
+scale = Vector2( 4, 4 )
+z_index = -1
+id = 2
+
+[node name="Volume3" parent="." instance=ExtResource( 2 )]
+modulate = Color( 0.803922, 0.419608, 0.368627, 1 )
+position = Vector2( 154, 456 )
+scale = Vector2( 4, 4 )
+z_index = -1
+id = 3
 [connection signal="PlayerEnter" from="Volume1" to="Player" method="onVolumeEnter"]
 [connection signal="PlayerExit" from="Volume1" to="Player" method="onVolumeExit"]
+[connection signal="PlayerEnter" from="Volume2" to="Player" method="onVolumeEnter"]
+[connection signal="PlayerExit" from="Volume2" to="Player" method="onVolumeExit"]
+[connection signal="PlayerEnter" from="Volume3" to="Player" method="onVolumeEnter"]
+[connection signal="PlayerExit" from="Volume3" to="Player" method="onVolumeExit"]
