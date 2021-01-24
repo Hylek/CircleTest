@@ -17,7 +17,7 @@ public class State
 
     protected void ResetScale(Player player)
     {
-        player.Scale = new Vector2(1, 1);
+        player.shape.Scale = new Vector2(1, 1);
     }
 
     protected void ResetColour(Player player)

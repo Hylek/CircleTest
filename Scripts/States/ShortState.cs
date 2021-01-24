@@ -15,6 +15,6 @@ public class ShortState : State
 
         ResetTexture(player);
         ResetColour(player);
-        player.Scale = new Vector2(player.Scale.x, player.Scale.y / 2);
+        player.shape.Scale = new Vector2(player.shape.Scale.x, player.shape.Scale.y / 2);
     }
 }

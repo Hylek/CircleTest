@@ -6,25 +6,25 @@
 [node name="RootScene" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 455, 247 )
+position = Vector2( 690.234, 258.987 )
 
 [node name="Volume1" parent="." instance=ExtResource( 2 )]
 modulate = Color( 0.368627, 0.733333, 0.803922, 1 )
-position = Vector2( 881, 458 )
+position = Vector2( 796.746, 611.824 )
 scale = Vector2( 4, 4 )
 z_index = -1
 id = 1
 
 [node name="Volume2" parent="." instance=ExtResource( 2 )]
 modulate = Color( 0.368627, 0.803922, 0.435294, 1 )
-position = Vector2( 881, 163 )
+position = Vector2( 1157.44, 184.002 )
 scale = Vector2( 4, 4 )
 z_index = -1
 id = 2
 
 [node name="Volume3" parent="." instance=ExtResource( 2 )]
 modulate = Color( 0.803922, 0.419608, 0.368627, 1 )
-position = Vector2( 154, 456 )
+position = Vector2( 224.421, 235.749 )
 scale = Vector2( 4, 4 )
 z_index = -1
 id = 3

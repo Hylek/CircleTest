@@ -12,8 +12,10 @@ public class Player : KinematicBody2D
 
     public Texture circleTexture { get; set; }
     public Texture squareTexture { get; set; }
-
     private Vector2 velocity = new Vector2();
+
+    public delegate void UpdateState(State newState);
+    public static event UpdateState onStateUpdate;
 
     public override void _Ready()
     {
@@ -27,6 +29,8 @@ public class Player : KinematicBody2D
         // On start assume the player's state is default.
         currentState = new DefaultState();
         currentState.ExecuteState(this);
+
+        onStateUpdate(currentState);
     }
 
     public override void _PhysicsProcess(float delta)
@@ -86,11 +90,15 @@ public class Player : KinematicBody2D
                 break;
         }
         currentState.ExecuteState(this);
+
+        onStateUpdate(currentState);
     }
 
     public void onVolumeExit()
     {
         currentState = new DefaultState();
         currentState.ExecuteState(this);
+
+        onStateUpdate(currentState);
     }
 }
