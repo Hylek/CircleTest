@@ -67,4 +67,30 @@ public class Player : KinematicBody2D
     {
         return GD.Load<Texture>(resPath);
     }
+
+    // Listens for the custom entry signal and determines the Volume type.
+    public void onVolumeEnter(StateID id)
+    {
+        switch(id)
+        {
+            case StateID.Volume1:
+                currentState = new BananaState();
+                break;
+
+            case StateID.Volume2:
+                currentState = new SquareState();
+                break;
+
+            case StateID.Volume3:
+                currentState = new ShortState();
+                break;
+        }
+        currentState.ExecuteState(this);
+    }
+
+    public void onVolumeExit()
+    {
+        currentState = new DefaultState();
+        currentState.ExecuteState(this);
+    }
 }

@@ -9,5 +9,10 @@
 position = Vector2( 455, 247 )
 
 [node name="Volume1" parent="." instance=ExtResource( 2 )]
+modulate = Color( 0.368627, 0.733333, 0.803922, 1 )
 position = Vector2( 881, 458 )
 scale = Vector2( 4, 4 )
+z_index = -1
+id = 1
+[connection signal="PlayerEnter" from="Volume1" to="Player" method="onVolumeEnter"]
+[connection signal="PlayerExit" from="Volume1" to="Player" method="onVolumeExit"]

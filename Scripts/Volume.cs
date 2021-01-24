@@ -14,12 +14,12 @@ public class Volume : Node2D
     [Signal]
     public delegate void PlayerExit();
 
-    public void onVolumeEnter(CollisionObject2D body)
+    public void onPlayerEnter(CollisionObject2D body)
     {
         EmitSignal(nameof(PlayerEnter), id);
     }
 
-    public void OnVolumeExit(CollisionObject2D body)
+    public void onPlayerExit(CollisionObject2D body)
     {
         EmitSignal(nameof(PlayerExit));
     }
