@@ -24,8 +24,8 @@ public class State
 
     protected void ResetColour(Player player)
     {
-        // Resets player's sprite colour back to white.
-        player.shape.Modulate = new Color(1, 1, 1, 1);
+        // Resets player's sprite colour back to purple.
+        player.shape.Modulate = new Color(0.58f, 0.44f, 0.86f, 1);
     }
 
     protected void ResetTexture(Player player)

@@ -1,9 +1,65 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Volume.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Fonts/Roboto.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Scripts/StateLabel.cs" type="Script" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 34
+use_filter = true
+font_data = ExtResource( 3 )
 
 [node name="RootScene" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+margin_right = 40.0
+margin_bottom = 14.0
+custom_fonts/font = SubResource( 1 )
+text = "The player's state is: "
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Vol1DebugLabel" type="Label" parent="."]
+margin_left = 641.233
+margin_top = 441.039
+margin_right = 960.233
+margin_bottom = 482.039
+custom_fonts/font = SubResource( 1 )
+text = "Volume 1"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Vol2DebugLabel" type="Label" parent="."]
+margin_left = 1000.27
+margin_top = 15.1891
+margin_right = 1319.27
+margin_bottom = 56.1891
+custom_fonts/font = SubResource( 1 )
+text = "Volume 2"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Vol3DebugLabel" type="Label" parent="."]
+margin_left = 383.763
+margin_top = 441.93
+margin_right = 702.763
+margin_bottom = 482.93
+custom_fonts/font = SubResource( 1 )
+text = "Volume 3"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 690.234, 258.987 )

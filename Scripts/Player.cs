@@ -1,5 +1,4 @@
 using Godot;
-using System;
 
 // Main class that handles all logic relating to the player.
 public class Player : KinematicBody2D
@@ -77,6 +76,7 @@ public class Player : KinematicBody2D
     // Listens for the custom entry signal and determines the Volume type.
     public void onVolumeEnter(StateID id)
     {
+        // Check if we are entering another volume directly after another or not.
         volumeTransition = currentState.GetStateID() != StateID.Default;
 
         switch(id)
