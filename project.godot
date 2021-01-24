@@ -16,6 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Daniel Cumbor Circletest"
+run/main_scene="res://Scenes/RootScene.tscn"
 config/icon="res://icon.png"
 
 [rendering]
