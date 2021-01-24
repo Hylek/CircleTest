@@ -8,6 +8,7 @@ public class Player : KinematicBody2D
     public int speed = 500;
 
     public Sprite shape { get; set; }
+    public State currentState { get; set; }
 
     public Texture circleTexture { get; set; }
     public Texture squareTexture { get; set; }
@@ -22,6 +23,10 @@ public class Player : KinematicBody2D
         // C# version does not allow use of preloader yet :(
         circleTexture = LoadTextureFromResource("res://Images/circle.png");
         squareTexture = LoadTextureFromResource("res://Images/square.png");
+
+        // On start assume the player's state is default.
+        currentState = new DefaultState();
+        currentState.ExecuteState(this);
     }
 
     public override void _PhysicsProcess(float delta)
@@ -31,7 +36,7 @@ public class Player : KinematicBody2D
         velocity = MoveAndSlide(velocity);
     }
 
-    // Queries if the following keys have been pressed every update.
+    // Queries if the following keys (from action in InputMap) have been pressed every update.
     private void ProcessInput()
     {
         velocity = Vector2.Zero;
