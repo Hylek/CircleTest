@@ -4,14 +4,16 @@ using Godot;
 // Opted for class instead of interface due to flexilbity of polymorphism
 public class State
 {
-    protected string stateID;
+    protected StateID stateID;
+    protected string debugStateName;
 
     // The text message that is associated with this state
     protected string stateMessage;
 
     public State()
     {
-        stateID = "";
+        stateID = StateID.Default;
+        debugStateName = "";
         stateMessage = "";
     }
 
@@ -38,9 +40,14 @@ public class State
         ResetTexture(player);
     }
 
-    public string GetStateID()
+    public StateID GetStateID()
     {
         return stateID;
+    }
+
+    public string GetStateDebugName()
+    {
+        return debugStateName;
     }
 
     public string GetStateMessage()

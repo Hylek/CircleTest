@@ -14,6 +14,8 @@ public class Player : KinematicBody2D
     public Texture squareTexture { get; set; }
     private Vector2 velocity = new Vector2();
 
+    private bool volumeTransition = false;
+
     public delegate void UpdateState(State newState);
     public static event UpdateState onStateUpdate;
 
@@ -75,6 +77,8 @@ public class Player : KinematicBody2D
     // Listens for the custom entry signal and determines the Volume type.
     public void onVolumeEnter(StateID id)
     {
+        volumeTransition = currentState.GetStateID() != StateID.Default;
+
         switch(id)
         {
             case StateID.Volume1:
@@ -96,9 +100,16 @@ public class Player : KinematicBody2D
 
     public void onVolumeExit()
     {
-        currentState = new DefaultState();
-        currentState.ExecuteState(this);
+        if(volumeTransition)
+        {
+            volumeTransition = false;
+        }
+        else
+        {
+            currentState = new DefaultState();
+            currentState.ExecuteState(this);
 
-        onStateUpdate(currentState);
+            onStateUpdate(currentState);
+        }
     }
 }

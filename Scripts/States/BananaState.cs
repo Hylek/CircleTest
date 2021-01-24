@@ -5,8 +5,9 @@ public class BananaState : State
 {
     public BananaState()
     {
+        stateID = StateID.Volume1;
         stateMessage = "I am a BANANA!";
-        stateID = "BananaState";
+        debugStateName = "BananaState";
     }
 
     public override void ExecuteState(Player player)

@@ -6,7 +6,8 @@ public class SquareState : State
 {
     public SquareState()
     {
-        stateID = "SquareState";
+        stateID = StateID.Volume2;
+        debugStateName = "SquareState";
         stateMessage = "I am not myself today";
     }
 

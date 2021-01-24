@@ -5,7 +5,8 @@ public class ShortState : State
 {
     public ShortState()
     {
-        stateID = "ShrunkCircleState";
+        stateID = StateID.Volume3;
+        debugStateName = "ShrunkCircleState";
         stateMessage = "I'm in Volume 3, it's nice here!";
     }
 

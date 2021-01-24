@@ -13,7 +13,8 @@ public class DefaultState : State
 {
     public DefaultState()
     {
-        stateID = "DefaultState";
+        stateID = StateID.Default;
+        debugStateName = "DefaultState";
         stateMessage = "";
     }
 

@@ -24,7 +24,7 @@ id = 2
 
 [node name="Volume3" parent="." instance=ExtResource( 2 )]
 modulate = Color( 0.803922, 0.419608, 0.368627, 1 )
-position = Vector2( 224.421, 235.749 )
+position = Vector2( 542.062, 613.322 )
 scale = Vector2( 4, 4 )
 z_index = -1
 id = 3
